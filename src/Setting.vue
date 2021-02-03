@@ -169,7 +169,7 @@ export default defineComponent({
   name: "Setting",
   components: { Modal },
   emits: ["confirm"],
-  setup(props, { emit }) {
+  setup(_, { emit }) {
     const visible = ref(false);
     const uploadEl = ref<HTMLInputElement | null>(null);
     const form = reactive<Info>({

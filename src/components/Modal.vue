@@ -64,7 +64,7 @@ export default defineComponent({
     },
   },
   emits: ["update:visible"],
-  setup(props, { emit }) {
+  setup(_, { emit }) {
     const onClose = () => emit("update:visible", false);
     return {
       onClose,
