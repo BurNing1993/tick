@@ -15,7 +15,7 @@
     <div class="absolute top-0 left-0">
       <canvas id="bg" width="100" height="100"></canvas>
     </div>
-    <Setting  @confirm="onConfirm"></Setting>
+    <Setting @confirm="onConfirm"></Setting>
   </div>
 </template>
 
@@ -87,12 +87,15 @@ export default defineComponent({
         bgImg.value = localBack;
       }
       if (isAfterTime) {
-        setInterval(() => {
+        timer = setInterval(() => {
           isAfterTime = dayjs().isBefore(target);
           countdown.value = dayjs.duration(target.diff(dayjs())).format(fmt);
         });
       } else {
         title.value = "设置时间到了!";
+        if (timer) {
+          clearInterval(timer);
+        }
       }
     });
     onBeforeUnmount(() => {
