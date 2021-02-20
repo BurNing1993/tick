@@ -1,6 +1,7 @@
 {
   "name": "tick",
   "version": "0.0.0",
+  "description": "tick!tick!",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
